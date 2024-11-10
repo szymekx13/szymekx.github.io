@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <style>
+    /* Ustawienia początkowe */
+    body {
+      background: #000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    /* Pasek zakładek */
+    .navbar {
+      background-color: gold;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+
+    /* Stylizacja dla elementów rozwijanych */
+    .navbar li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 30px;
+      background-color: #005bb5;
+      padding: 10px;
+      border-radius: 5px;
+      min-width: 120px;
+    }
+
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 5px 0;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background-color: #004494;
+    }
+
+    /* Ukrycie treści na starcie */
+    .content {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+      text-align: center;
+    }
+
+    /* Definicja animacji pojawiania się */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Kontener wyśrodkowujący animowany tekst */
+    .typewriter-container {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /* Stylizacja efektu maszyny do pisania */
+    .typewriter {
+      font-family: monospace;
+      font-size: 24px;
+      color: gray;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid gray;
+      display: inline-block;
+      animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+      animation-delay: 1.5s;
+    }
+
+    /* Animacja pisania */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Animacja migania kursora */
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: gray; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Treść główna -->
+  <div class="content">
+    <h1 style="color: yellow;"><b>Szymon Niedbała</b></h1>
+    <div class="typewriter-container">
+      <div class="typewriter">
+        Z pasji historyk, z wykształcenia informatyk.
+      </div>
+    </div>
+  </div>
+    <!-- Pasek zakładek -->
+    <div class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Word</a></li>
+          <li><a href="#">Excel</a></li>
+          <li>
+            <a href="#">HTML 5</a>
+            <div class="dropdown">
+              <a href="#">Podpunkt 1</a>
+              <a href="#">Podpunkt 2</a>
+            </div>
+          </li>
+          <li>
+            <a href="#">CSS 3</a>
+            <div class="dropdown">
+              <a href="#">Podpunkt 1</a>
+              <a href="#">Podpunkt 2</a>
+            </div>
+          </li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">GRY JS</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">Fraktale</a></li>
+          <li><a href="#">C++</a></li>
+          <li><a href="#">GIMP</a></li>
+          <li><a href="#">InkScape</a></li>
+          <li><a href="#">PHP</a></li>
+        </ul>
+      </div>
+</body>
+</html>
